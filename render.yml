@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: mongodb
+    env: docker
+    plan: starter
+
+    disk:
+      name: mongodb-data
+      mountPath: /data/db
+      sizeGB: 5
+
+    envVars:
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: admin
+
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        generateValue: true
